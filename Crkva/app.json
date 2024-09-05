@@ -110,8 +110,10 @@
   },
   "development": {
     "js": [
-      {"path": "app.js", "bundle": true},
-      {"path": "main.js"}
+      {
+        "path": "app.js",
+        "bundle": true
+      }
     ],
     "watch": {
       "delay": 250

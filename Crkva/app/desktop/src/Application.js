@@ -1,8 +1,11 @@
 Ext.define('Crkva.Application', {
 	extend: 'Ext.app.Application',
 	name: 'Crkva',
-	requires: ['Crkva.*'],
-	defaultToken: 'homeview',
+
+	requires: [
+		'Crkva.view.main.Main',
+		'Crkva.view.login.Login',
+	],
 
 	launch: function () {
 		Ext.ariaWarn = Ext.emptyFn
@@ -10,15 +13,7 @@ Ext.define('Crkva.Application', {
 		var elem = document.getElementById("splash")
 		elem.parentNode.removeChild(elem)
 
-		var whichView = 'mainview'
-//		var loggedIn = localStorage.getItem("LoggedIn");
-//		if(loggedIn != 'true') { whichView = 'loginview' }
-		if (Ext.isClassic == true) {
-			Ext.create({xtype: whichView, plugins: 'viewport'})
-		}
-		else {
-			Ext.Viewport.add([{xtype: whichView}])
-		}
+		Ext.create({ xtype: 'main', plugins: 'viewport' })
 	},
 
 	onAppUpdate: function () {
