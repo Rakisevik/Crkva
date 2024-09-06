@@ -19,15 +19,6 @@ Ext.define('Crkva.view.main.Main', {
         {
             region: 'north',
             xtype: 'headerview'
-        },
-        {
-            region: 'center',
-            items: [
-                {
-                    xtype: 'button',
-                    text: 'Click me'
-                }
-            ]
         }
     ]
 });
