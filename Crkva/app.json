@@ -9,6 +9,10 @@
     "font-awesome"
   ],
 
+  "uses": [
+    "GeoExt"
+  ],
+
   "builds": {
     "desktop": {
       "toolkit": "classic",
@@ -22,8 +26,12 @@
     }
   },
 
-  "classpath": ["app/shared/src","app/${build.id}/src"],
-  "overrides": ["app/shared/overrides","app/${build.id}/overrides"],
+  "classpath": [
+    "app/shared/src",
+    "app/${build.id}/src",
+    "packages/remote/GeoExt/src"
+  ],
+  "overrides": [ "app/shared/overrides", "app/${build.id}/overrides" ],
 
   "sass": {
     "namespace": "Crkva",
@@ -41,9 +49,11 @@
   },
 
   "resources": [
-    { "path": "resources", "output": "shared" }
-
-    ,{ "path": "resources/${build.id}" }
+    {
+      "path": "resources",
+      "output": "shared"
+    },
+    { "path": "resources/${build.id}" }
 
   ],
 
@@ -52,29 +62,38 @@
     "page": "index.html",
     "manifest": "generatedFiles/${build.id}.json",
     "js": "generatedFiles/${build.id}/app.js",
-    "appCache": {"enable": false},
+    "appCache": { "enable": false },
     "resources": {
       "path": "${build.id}/resources",
       "shared": "resources"
     }
   },
-  
+
   "fashion": {
-"missingParameters": "error",
-    "inliner": {"enable": false}
+    "missingParameters": "error",
+    "inliner": { "enable": false }
   },
 
   "js": [
+    {
+      "path": "resources/openLayers/ol.js"
+    },
+    {
+      "path": "resources/proj4/proj4.js"
+    }
   ],
 
-  "classic": {"js": []},
-  "modern": {"js": []},
+  "classic": { "js": [] },
+  "modern": { "js": [] },
 
   "css": [
     {
       "path": "${build.out.css.path}",
       "bundle": true,
-      "exclude": ["fashion"]
+      "exclude": [ "fashion" ]
+    },
+    {
+      "path": "resources/openLayers/ol.css"
     }
   ],
   "loader": {
@@ -83,8 +102,14 @@
   },
   "production": {
     "js": [
-      {"path": "app.js", "bundle": true},
-      {"path": "${app.webpack.bundle}", "compress": false }
+      {
+        "path": "app.js",
+        "bundle": true
+      },
+      {
+        "path": "${app.webpack.bundle}",
+        "compress": false
+      }
     ],
     "output": {
       "appCache": {
@@ -104,8 +129,14 @@
   },
   "testing": {
     "js": [
-      {"path": "app.js", "bundle": true},
-      {"path": "${app.webpack.bundle}", "compress": false }
+      {
+        "path": "app.js",
+        "bundle": true
+      },
+      {
+        "path": "${app.webpack.bundle}",
+        "compress": false
+      }
     ]
   },
   "development": {
@@ -121,7 +152,7 @@
   },
   "bootstrap": {
     "base": "${app.dir}",
-"manifest": "generatedFiles/${build.id}.json",
+    "manifest": "generatedFiles/${build.id}.json",
     "microloader": "generatedFiles/bootstrap.js",
     "css": "generatedFiles/bootstrap.css"
   },
@@ -132,14 +163,14 @@
   },
 
   "appCache": {
-    "cache": ["index.html"],
-    "network": ["*"],
+    "cache": [ "index.html" ],
+    "network": [ "*" ],
     "fallback": []
   },
 
 
   "archivePath": "archive/${build.id}",
 
-  "ignore": ["(^|/)CVS(/?$|/.*?$)"],
+  "ignore": [ "(^|/)CVS(/?$|/.*?$)" ],
   "id": "8045c603-cb37-4ccd-8eb7-360d241f3009"
 }

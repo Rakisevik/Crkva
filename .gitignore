@@ -30,14 +30,11 @@ msbuild.wrn
 
 # Visual Studio 2015
 .vs/
-/Cockpit.Import/SerializedData
 *.log
-/Cockpit/package-lock.json
-/Cockpit/packages/remote/GeoExt
+/Crkva/package-lock.json
+/Crkva/packages/remote/GeoExt
 /node_modules
 /package-lock.json
-/Cockpit.WmsServices/TileCache/
 /packages
 *.pubxml
 /.cr/personal
-/Crkva/packages/remote/GeoExt
