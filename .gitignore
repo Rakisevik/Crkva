@@ -40,3 +40,4 @@ msbuild.wrn
 /packages
 *.pubxml
 /.cr/personal
+/Crkva/packages/remote/GeoExt
