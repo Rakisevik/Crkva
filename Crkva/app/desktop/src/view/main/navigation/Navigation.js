@@ -4,7 +4,9 @@
 
     requires: [
         'Crkva.view.main.navigation.NavigationController',
-        'Crkva.view.main.navigation.NavigationModel'
+        'Crkva.view.main.navigation.NavigationModel',
+        'Crkva.view.main.navigation.map.MapNavigation',
+        'Ext.layout.container.Card'
     ],
 
     controller: 'navigation',
@@ -13,13 +15,14 @@
     },
 
     layout: {
-        type: 'hbox',
-        pack: 'start',
-        align: 'middle'
+        type: 'card'
     },
 
     width: 300,
 
     items: [
+        {
+            xtype: 'mapnavigation'
+        }
     ]
 });
