@@ -7,7 +7,7 @@ Ext.define('Crkva.view.main.Main', {
         'Crkva.view.main.MainController',
         'Crkva.view.main.MainModel',
         'Crkva.view.main.header.HeaderView',
-        'Crkva.view.main.workspace.map.Map',
+        'Crkva.view.main.workspace.Workspace',
         'Crkva.view.main.sidebar.Sidebar',
         'Crkva.view.main.navigation.Navigation'
     ],
@@ -25,15 +25,24 @@ Ext.define('Crkva.view.main.Main', {
         },
         {
             region: 'center',
-            xtype: 'map'
+            xtype: 'workspace',
+            bind: {
+                activeItem: '{workspaceActiveItem}'
+            }
         },
         {
             region: 'east',
-            xtype: 'sidebar'
+            xtype: 'sidebar',
+            bind: {
+                activeItem: '{sidebarActiveItem}'
+            }
         },
         {
             region: 'west',
-            xtype: 'navigation'
+            xtype: 'navigation',
+            bind: {
+                activeItem: '{navigationActiveItem}'
+            }
         }
     ]
 });

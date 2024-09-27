@@ -6,6 +6,8 @@
         'Crkva.view.main.navigation.NavigationController',
         'Crkva.view.main.navigation.NavigationModel',
         'Crkva.view.main.navigation.map.MapNavigation',
+        'Crkva.view.main.navigation.search.SearchNavigation',
+        'Crkva.view.main.navigation.map.MapNavigation',
         'Ext.layout.container.Card'
     ],
 
@@ -17,12 +19,16 @@
     layout: {
         type: 'card'
     },
-
     width: 300,
 
     items: [
         {
-            xtype: 'mapnavigation'
+            xtype: 'searchnavigation',
+            id: NavigationMode.Search,
+        },
+        {
+            xtype: 'mapnavigation',
+            id: NavigationMode.Map,
         }
     ]
 });

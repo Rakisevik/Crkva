@@ -43,20 +43,36 @@
         {
             xtype: 'button',
             text: 'ПРЕТРАГА',
+            name: 'search',
             height: 65,
-            cls: 'header-button-style'
+            cls: 'header-button-style',
+            enableToggle: true,
+            allowDepress: false,
+            toggleGroup: 'headerGroup',
+            toggleHandler: 'headerGroupHandler'
         },
         {
             xtype: 'button',
             text: 'ПОДАЦИ',
+            name: 'data',
             height: 65,
-            cls: 'header-button-style'
+            cls: 'header-button-style',
+            enableToggle: true,
+            allowDepress: false,
+            toggleGroup: 'headerGroup',
+            toggleHandler: 'headerGroupHandler'
         },
         {
             xtype: 'button',
             text: 'МАПА',
+            name: 'map',
             height: 65,
-            cls: 'header-button-style'
+            cls: 'header-button-style',
+            pressed: true,
+            enableToggle: true,
+            allowDepress: false,
+            toggleGroup: 'headerGroup',
+            toggleHandler: 'headerGroupHandler'
         },
         {
             xtype: 'container',

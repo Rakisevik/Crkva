@@ -5,6 +5,11 @@ Ext.define('Crkva.Application', {
 	requires: [
 		'Crkva.view.main.Main',
 		'Crkva.view.login.Login',
+		'Crkva.enum.WorkspaceMode',
+		'Crkva.enum.ApplicationMode',
+		'Crkva.enum.SidebarMode',
+		'Crkva.enum.NavigationMode',
+		'Crkva.Constants'
 	],
 
 	launch: function () {

@@ -34,7 +34,6 @@
             ]
         }),
             mapComponent = me.getView().down();
-        //debugger;
         mapComponent.setMap(map);
         vm.set('map', map);
         //me.createMapClickEvent(map);
